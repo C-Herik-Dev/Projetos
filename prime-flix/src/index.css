@@ -1,17 +1,4 @@
-/* *{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
 
-body{
-  font-family: sans-serif;
+body, #root, .App { 
+    padding-top: 60px; /* Ajuste este se 60px for a altura exata do header */
 }
-
-.app{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-} */

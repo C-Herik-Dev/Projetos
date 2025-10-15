@@ -4,47 +4,96 @@
   box-sizing: border-box;
 }
 
+.lista-filmes {
+    /* Limitamos a largura do container */
+    max-width: 1200px; /* Aumentei a largura para caber mais filmes lado a lado */
+    margin: 14px auto;
+    padding: 0 10px; /* Um pequeno padding nas laterais */
 
-
-.lista-filmes{
-  max-width: 800px;
-  margin: 14px auto;
+    /* --- CONFIGURAÇÃO DO FLEXBOX --- */
+    display: flex;
+    /* Permite que os itens quebrem para a próxima linha */
+    flex-wrap: wrap; 
+    /* Distribui o espaço extra entre os itens (ou nas bordas, dependendo do que você preferir. Aqui escolhi 'space-between' para tentar preencher bem a linha.) */
+    justify-content: center; /* Centraliza os itens na linha */
+    gap: 20px; /* Espaço entre os cards (Funciona bem com Flexbox moderno) */
 }
 
-.lista-filmes article{
-  width: 100%;
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 4px;
+/* ESTILIZAÇÃO DE CADA CARD DE FILME */
+.lista-filmes article {
+    /* O item terá no mínimo 280px, mas não mais que 100% (em telas pequenas) */
+    /* Em telas maiores, ele tenta ocupar 1/3 ou 1/4 do espaço, dependendo do 'max-width' e do 'gap' */
+    min-width: 280px; 
+    /* Permite que o card encolha e cresça, ajustando-se ao espaço do container */
+    flex: 1 1 280px; 
+
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+    /* Configuração interna para alinhar título/imagem/botão verticalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
-.lista-filmes strong{
-  margin-bottom: 14px;
-  text-align: center;
-  font-size: 22px;
-  display: block;
+.lista-filmes article:hover {
+    transform: scale(1.03); /* Aumenta o card inteiro em 3% (um zoom mais sutil para o card) */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada para dar profundidade */
 }
 
-.lista-filmes img{
-  width: 900px;
-  max-width: 100%;
-  max-height: 340px;
-  object-fit: cover;
-  display: block;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+/* TÍTULO DO FILME */
+.lista-filmes strong {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+    display: block;
+    min-height: 40px; 
+    overflow: hidden; 
 }
 
-.lista-filmes a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 0;
-  font-size: 24px;
-  background-color: #116FEB;
-  text-decoration: none;
-  color: #fff;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+/* IMAGEM DO FILME (POSTER) */
+.lista-filmes img {
+    width: 100%;
+    height: auto; 
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+    margin-bottom: 15px; 
 }
 
+/* BOTÃO ACESSAR */
+.lista-filmes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    font-size: 18px;
+    background-color: #5d50c7; 
+    text-decoration: none;
+    color: #fff;
+    border-radius: 4px; 
+    /* Isto é crucial no Flexbox interno para empurrar o botão para o final */
+    margin-top: auto; 
+    transition: background-color 0.3s ease, background-image 0.3s ease;
+}
+
+.lista-filmes a:hover{
+   /* Degrade de roxo claro para roxo mais escuro (tons da sua cor original) */
+    background-image: linear-gradient(to right, #6a5acd, #4b3e8e); 
+    background-color: transparent; /* Importante para o degrade aparecer */
+    /*transform: translateY(-2px); /* Efeito sutil de "levantar" o botão */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para o "levantar" */
+    cursor: pointer; /* Muda o cursor */
+}
+
+/* --- ESTILIZAÇÃO DE CARREGAMENTO (OPCIONAL) --- */
+.loading {
+    text-align: center;
+    padding: 50px;
+    font-size: 24px;
+}
