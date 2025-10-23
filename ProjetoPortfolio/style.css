@@ -111,7 +111,7 @@ html {
 }
 /*Fim about*/
 
-/*Inicio projetos*/
+/* Inicio projetos
 .projects {
   width: 100%;
   display: flex;
@@ -150,7 +150,7 @@ html {
 
 .projects img:hover {
   opacity: 1;
-}
+} */
 
 .action {
   background-color: #181818;
@@ -239,3 +239,116 @@ footer p {
     margin: 0;
   }
 }
+
+
+ /* PROJETOS */
+
+.projects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 10%; /* Aumentei o padding lateral */
+  
+  /* CORREÇÃO DO LAYOUT: Garante que a seção comece abaixo da anterior */
+  clear: both; 
+}
+
+.projects h2 {
+  font-size: 32px; /* Padronizado com o H2 do Sobre */
+  margin-bottom: 8px;
+  margin-top: 20px;
+}
+
+.projects p {
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+/* CONTAINER PRINCIPAL DA GRADE (bloco-projetos) */
+.bloco-projetos {
+    width: 100%; 
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    /* CONFIGURAÇÃO DO CSS GRID */
+    display: grid;
+    /* Mínimo de 280px por coluna, ajustando-se ao espaço (1fr) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Espaço entre os cards */
+    margin-bottom: 40px;
+}
+
+/* ESTILIZAÇÃO DE CADA CARD DE PROJETO (o âncora <a>) */
+.projeto-card {
+    display: flex; 
+    flex-direction: column;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-decoration: none; 
+    color: #333;
+    cursor: pointer;
+    
+    /* Efeito de transição para o hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* EFEITO AO PASSAR O MOUSE SOBRE O CARD */
+.projeto-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.projeto-card img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover; 
+}
+
+.projeto-info {
+    padding: 15px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #1e96FC; /* Usando o azul do seu design */
+}
+
+.projeto-info p {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    line-height: 1.5;
+    flex-grow: 1; 
+}
+
+/* ESTILIZAÇÃO DAS TAGS DE TECNOLOGIA */
+.projeto-card .tag {
+    display: inline-block;
+    background-color: #e6f7ff; /* Azul bem claro */
+    color: #1e96FC;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-right: 8px;
+    margin-top: 5px;
+}
+
+.action {
+  background-color: #181818;
+  border: 0;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 18px;
+  color: #ffffff;
+  margin-top: 18px;
+  cursor: pointer;
+}
+/*Fim projetos*/
