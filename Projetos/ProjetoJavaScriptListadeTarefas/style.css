@@ -1,0 +1,132 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Usando a fonte que você já usa */
+}
+
+body {
+    background: #f7f7f7;
+    display: flex;
+    flex-direction: column; 
+    
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* CONTAINER PRINCIPAL DO APP */
+
+
+#app {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 450px;
+}
+
+#app h1 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+    padding-bottom: 10px; 
+    border-bottom: 2px solid #eee;
+}
+
+/* CAMPO DE REGISTRO */
+#app div {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#app input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px 0 0 6px; /* Bordas arredondadas na esquerda */
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#app input[type="text"]:focus {
+    border-color: #1e96FC; /* Cor azul do seu portfólio no foco */
+}
+
+#app button {
+    padding: 12px 20px;
+    background-color: #1e96FC;
+    color: white;
+    border: none;
+    border-radius: 0 6px 6px 0; /* Bordas arredondadas na direita */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#app button:hover {
+    background-color: #0d70bf; /* Azul mais escuro no hover */
+    transform: translateY(-1px); /* Efeito sutil de levantar */
+}
+
+/* LISTA DE TAREFAS */
+#app ul {
+    list-style: none;
+    padding: 0;
+}
+
+#app ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 16px;
+    color: #555;
+}
+
+#app ul li:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+/* BOTÃO DE EXCLUIR */
+#app ul li a {
+    color: #e74c3c; /* Cor vermelha para indicar ação de exclusão */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 15px;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+#app ul li a:hover {
+    color: white;
+    background-color: #e74c3c;
+}
+
+.app-header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1e96FC; /* Seu azul de destaque */
+}
+
+.app-header h1 {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.app-header p {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #555;
+}
